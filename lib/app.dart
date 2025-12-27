@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_app/routes/app_routes.dart';
+import 'package:groceries_app/presentation/routes/app_routes.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+/// code phải dễ đọc, dễ hiểu, dễ mở rộng, dễ bảo trì, dễ tái sử dụng, sau kiểm thử
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

@@ -1,9 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:groceries_app/components/app_color.dart';
-import 'package:groceries_app/components/app_path.dart';
-import 'package:groceries_app/routes/app_routes.dart';
+import 'package:groceries_app/core/assets_gen/assets.gen.dart';
+import 'package:groceries_app/presentation/shared/app_color.dart';
+import 'package:groceries_app/presentation/shared/app_path.dart';
+import 'package:groceries_app/presentation/routes/app_routes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -34,6 +35,6 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Center buildBody() {
-    return Center(child: Image.asset(AppPath.imgLogoAndText));
+    return Center(child: Image.asset(Assets.img.imgLogoAndText.path));
   }
 }

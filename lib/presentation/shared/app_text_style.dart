@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:groceries_app/components/app_color.dart';
+import 'package:groceries_app/presentation/shared/app_color.dart';
 
 class AppTextStyle {
   static const TextStyle tsSemiboldWhite48 = TextStyle(

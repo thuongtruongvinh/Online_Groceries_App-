@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_app/components/app_color.dart';
-import 'package:groceries_app/components/app_text.dart';
-import 'package:groceries_app/components/app_text_style.dart';
+import 'package:groceries_app/presentation/shared/app_color.dart';
+import 'package:groceries_app/presentation/shared/app_text.dart';
+import 'package:groceries_app/presentation/shared/app_text_style.dart';
 import 'package:groceries_app/core/extension/context_extension.dart';
 
 class AppButton extends StatelessWidget {

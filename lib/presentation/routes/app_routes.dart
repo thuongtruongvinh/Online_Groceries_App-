@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_app/screens/auth/singin_screen.dart';
-import 'package:groceries_app/screens/onboarding/onboarding_screen.dart';
-import 'package:groceries_app/screens/splash/splash_screen.dart';
+import 'package:groceries_app/presentation/screens/auth/singin_screen.dart';
+import 'package:groceries_app/presentation/screens/onboarding/onboarding_screen.dart';
+import 'package:groceries_app/presentation/screens/splash/splash_screen.dart';
 
 class AppRoutes {
   static const String splashScreen = '/splash';
