@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:groceries_app/l10n/app_localizations.dart';
+import 'package:groceries_app/core/extensions/context_extension.dart';
 import 'package:groceries_app/presentation/shared/app_button.dart';
 import 'package:groceries_app/presentation/shared/app_path.dart';
 import 'package:groceries_app/presentation/shared/app_text.dart';
 import 'package:groceries_app/presentation/shared/app_text_style.dart';
-import 'package:groceries_app/core/extension/context_extension.dart';
-import 'package:groceries_app/presentation/routes/app_routes.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -45,9 +43,9 @@ class OnboardingScreen extends StatelessWidget {
         ),
         SizedBox(height: context.screenHeight * 40 / 896),
         AppButton(
-          text: context.localizations.getStarted,
+          text: context.appLocalizations.getStarted,
           onTap: () {
-            Navigator.pushReplacementNamed(context, AppRoutes.singinScreen);
+            // Navigator.pushReplacementNamed(context, AppRoutes.singinScreen);
           },
         ),
       ],
