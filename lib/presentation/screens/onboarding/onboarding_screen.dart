@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:groceries_app/l10n/app_localizations.dart';
 import 'package:groceries_app/presentation/shared/app_button.dart';
 import 'package:groceries_app/presentation/shared/app_path.dart';
 import 'package:groceries_app/presentation/shared/app_text.dart';

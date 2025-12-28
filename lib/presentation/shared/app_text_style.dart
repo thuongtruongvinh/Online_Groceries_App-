@@ -14,10 +14,45 @@ class AppTextStyle {
     color: AppColor.blushWhite,
     fontFamily: 'Gilroy',
   );
+
+  static const TextStyle tsSemiboldNearWhite18 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: AppColor.nearWhite,
+    fontFamily: 'Gilroy',
+  );
+
+  static const TextStyle tsSemiboldNeutralGray14 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: AppColor.neutralGray,
+    fontFamily: 'Gilroy',
+  );
+
+  static const TextStyle tsSemiboldNeutralGray16 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: AppColor.neutralGray,
+    fontFamily: 'Gilroy',
+  );
   static final TextStyle tsRegularsoftWhite16 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w400,
     color: AppColor.softWhite,
+    fontFamily: 'Gilroy',
+  );
+
+  static final TextStyle tsSemiBoldNearBlack26 = TextStyle(
+    fontSize: 26,
+    fontWeight: FontWeight.w600,
+    color: AppColor.nearBlack,
+    fontFamily: 'Gilroy',
+  );
+
+  static final TextStyle tsSemiBoldNearBlack18 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: AppColor.nearBlack,
     fontFamily: 'Gilroy',
   );
 }

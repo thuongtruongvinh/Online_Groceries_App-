@@ -67,6 +67,10 @@ dependencies:
   dartz: ^0.10.1
   cupertino_icons: ^1.0.8
 
+  #Location (FREE - no API key needed)
+  geolocator: ^13.0.2
+  geocoding: ^3.0.0
+
   #Routing
   go_router: ^15.0.0
 
@@ -75,6 +79,12 @@ dependencies:
 
   #Share
   share_plus: ^11.0.0
+
+  #input Phone number
+  intl_phone_number_input: ^0.7.5
+
+  #Animation
+  lottie: ^3.3.2
 
 dev_dependencies:
   flutter_test:
@@ -102,6 +112,7 @@ flutter:
     - assets/img/
     - assets/font/
     - assets/icon/
+    - assets/lotties/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

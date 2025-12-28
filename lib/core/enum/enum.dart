@@ -1,1 +1,3 @@
-library;
+enum SocialButtonType {
+  google,
+  facebook,}
