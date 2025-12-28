@@ -1,7 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:groceries_app/core/assets_gen/assets.gen.dart';
+import 'package:groceries_app/presentation/routes/app_router.dart';
+import 'package:groceries_app/presentation/routes/route_name.dart';
 import 'package:groceries_app/presentation/shared/app_color.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -17,7 +20,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     _timer = Timer(const Duration(seconds: 3), () {
-      // Navigator.pushReplacementNamed(context, AppRoutes.onboardingScreen);
+      if (!mounted) return;
+      context.goNamed(RouteName.onboardingName);
     });
   }
 
