@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries_app/presentation/shared/app_color.dart';
 
 /// A class that defines the color scheme used throughout the application.
 ///
@@ -15,7 +16,7 @@ class AppColors {
 
   /// The default background color for screens and containers.
   /// Value: #F5F5F5 (Light Gray)
-  static const Color backgroundColor = Color(0xFFF5F5F5);
+  static const Color backgroundColor = AppColor.nearWhite;
 
   /// The primary text color used for readability and contrast.
   /// Value: #212121 (Dark Gray)

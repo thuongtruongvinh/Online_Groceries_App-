@@ -33,8 +33,24 @@ class $AssetsIconGen {
   /// File path: assets/icon/ic_carrot.svg
   SvgGenImage get icCarrot => const SvgGenImage('assets/icon/ic_carrot.svg');
 
+  /// File path: assets/icon/ic_carrot_color.svg
+  SvgGenImage get icCarrotColor =>
+      const SvgGenImage('assets/icon/ic_carrot_color.svg');
+
+  /// File path: assets/icon/ic_facebook.svg
+  SvgGenImage get icFacebook =>
+      const SvgGenImage('assets/icon/ic_facebook.svg');
+
+  /// File path: assets/icon/ic_google.svg
+  SvgGenImage get icGoogle => const SvgGenImage('assets/icon/ic_google.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values => [icCarrot];
+  List<SvgGenImage> get values => [
+    icCarrot,
+    icCarrotColor,
+    icFacebook,
+    icGoogle,
+  ];
 }
 
 class $AssetsImgGen {
@@ -48,11 +64,31 @@ class $AssetsImgGen {
   AssetGenImage get imgLogoAndText =>
       const AssetGenImage('assets/img/img_logo_and_text.png');
 
+  /// File path: assets/img/img_map_location.png
+  AssetGenImage get imgMapLocation =>
+      const AssetGenImage('assets/img/img_map_location.png');
+
+  /// File path: assets/img/img_vegetables.png
+  AssetGenImage get imgVegetables =>
+      const AssetGenImage('assets/img/img_vegetables.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
     imgBackgroundOnboardingScreen,
     imgLogoAndText,
+    imgMapLocation,
+    imgVegetables,
   ];
+}
+
+class $AssetsLottiesGen {
+  const $AssetsLottiesGen();
+
+  /// File path: assets/lotties/loading.json
+  String get loading => 'assets/lotties/loading.json';
+
+  /// List of all assets
+  List<String> get values => [loading];
 }
 
 class Assets {
@@ -61,6 +97,7 @@ class Assets {
   static const $AssetsFontGen font = $AssetsFontGen();
   static const $AssetsIconGen icon = $AssetsIconGen();
   static const $AssetsImgGen img = $AssetsImgGen();
+  static const $AssetsLottiesGen lotties = $AssetsLottiesGen();
 }
 
 class AssetGenImage {

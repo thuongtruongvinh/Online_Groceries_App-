@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:groceries_app/core/extensions/context_extension.dart';
+import 'package:groceries_app/presentation/routes/route_name.dart';
 import 'package:groceries_app/presentation/shared/app_button.dart';
 import 'package:groceries_app/presentation/shared/app_path.dart';
 import 'package:groceries_app/presentation/shared/app_text.dart';
@@ -45,7 +47,7 @@ class OnboardingScreen extends StatelessWidget {
         AppButton(
           text: context.appLocalizations.getStarted,
           onTap: () {
-            // Navigator.pushReplacementNamed(context, AppRoutes.singinScreen);
+            context.goNamed(RouteName.signupName);
           },
         ),
       ],

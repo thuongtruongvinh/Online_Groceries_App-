@@ -1,5 +1,9 @@
 import 'package:go_router/go_router.dart';
 import 'package:groceries_app/presentation/routes/route_name.dart';
+import 'package:groceries_app/presentation/screens/Home/home_screen.dart';
+import 'package:groceries_app/presentation/screens/auth/signup_screen.dart';
+import 'package:groceries_app/presentation/screens/auth/verify_otp_screen.dart';
+import 'package:groceries_app/presentation/screens/location/selected_location.dart';
 import 'package:groceries_app/presentation/screens/login/login_screen.dart';
 import 'package:groceries_app/presentation/screens/onboarding/onboarding_screen.dart';
 import 'package:groceries_app/presentation/screens/splash/splash_screen.dart';
@@ -25,6 +29,27 @@ class AppRouter {
     initialLocation: RouteName.splashPath,
     routes: [
       GoRoute(
+        path: RouteName.homePath,
+        name: RouteName.homeName,
+        builder: (context, state) => const HomeScreen()
+      ),
+
+      GoRoute(
+        path: RouteName.selectLocationPath,
+        name: RouteName.selectLocationName,
+        builder: (context, state) => const SelectLocation(),
+      ),
+      GoRoute(
+        path: RouteName.signupPath,
+        name: RouteName.signupName,
+        builder: (context, state) => const SignupScreen(),
+      ),
+      GoRoute(
+        path: RouteName.verifyOtpPath,
+        name: RouteName.verifyOtpName,
+        builder: (context, state) => const VerifyOtpScreen(),
+      ),
+      GoRoute(
         path: RouteName.splashPath,
         name: RouteName.splashName,
         builder: (context, state) => const SplashScreen(),
@@ -38,11 +63,6 @@ class AppRouter {
         path: RouteName.onboardingPath,
         name: RouteName.onboardingName,
         builder: (context, state) => const OnboardingScreen(),
-      ),
-      GoRoute(
-        path: RouteName.loginPath,
-        name: RouteName.loginName,
-        builder: (context, state) => const LoginScreen(),
       ),
     ],
   );

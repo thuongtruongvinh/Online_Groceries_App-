@@ -18,11 +18,18 @@ class RouteName {
   static const String splashPath = '/splash';
   static const String loginPath = '/login';
   static const String onboardingPath = '/onboarding';
-  static const String signInPath = '/sign_in';
+  static const String signupPath = '/sign_up';
+  static const String verifyOtpPath = '/verify_otp';
+  static const String selectLocationPath = '/select_location';
+  static const String homePath = '/home';
+  
 
   /// Define route name
   static const String splashName = 'splash';
   static const String loginName = 'login';
   static const String onboardingName = 'onboarding';
-  static const String signInName = 'sign_in';
+  static const String signupName = 'sign_up';
+  static const String verifyOtpName = 'verify_otp';
+  static const String selectLocationName = 'select_location';
+  static const String homeName = 'home';
 }
