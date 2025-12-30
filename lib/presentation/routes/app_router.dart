@@ -1,8 +1,11 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:groceries_app/presentation/bloc/bottom_tab/bottom_tab_bloc.dart';
 import 'package:groceries_app/presentation/routes/route_name.dart';
 import 'package:groceries_app/presentation/screens/Home/home_screen.dart';
 import 'package:groceries_app/presentation/screens/auth/signup_screen.dart';
 import 'package:groceries_app/presentation/screens/auth/verify_otp_screen.dart';
+import 'package:groceries_app/presentation/screens/bottom_tab/bottom_tab.dart';
 import 'package:groceries_app/presentation/screens/location/selected_location.dart';
 import 'package:groceries_app/presentation/screens/login/login_screen.dart';
 import 'package:groceries_app/presentation/screens/onboarding/onboarding_screen.dart';
@@ -31,7 +34,7 @@ class AppRouter {
       GoRoute(
         path: RouteName.homePath,
         name: RouteName.homeName,
-        builder: (context, state) => const HomeScreen()
+        builder: (context, state) => const HomeScreen(),
       ),
 
       GoRoute(
@@ -63,6 +66,14 @@ class AppRouter {
         path: RouteName.onboardingPath,
         name: RouteName.onboardingName,
         builder: (context, state) => const OnboardingScreen(),
+      ),
+      GoRoute(
+        path: RouteName.bottomTabPath,
+        name: RouteName.bottomTabName,
+        builder: (context, state) => BlocProvider(
+          create: (context) => BottomTabBloc(),
+          child: const BottomTab(),
+        ),
       ),
     ],
   );

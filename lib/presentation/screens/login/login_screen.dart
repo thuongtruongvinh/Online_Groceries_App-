@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:groceries_app/core/assets_gen/assets.gen.dart';
 import 'package:groceries_app/core/extensions/context_extension.dart';
 import 'package:groceries_app/di/injector.dart';
@@ -9,6 +10,7 @@ import 'package:groceries_app/domain/usecase/login_user_usecase.dart';
 import 'package:groceries_app/presentation/bloc/login/login_bloc.dart';
 import 'package:groceries_app/presentation/bloc/login/login_state.dart';
 import 'package:groceries_app/presentation/error/failure_mapper.dart';
+import 'package:groceries_app/presentation/routes/route_name.dart';
 import 'package:groceries_app/presentation/shared/app_button.dart';
 import 'package:groceries_app/presentation/shared/app_text.dart';
 import 'package:groceries_app/presentation/shared/app_text_style.dart';
@@ -90,8 +92,10 @@ class _LoginScreenView extends StatelessWidget {
                 AppButton(
                   text: 'Log In',
                   onTap: () {
-                    final username = usernameController.text;
-                    final password = passwordController.text;
+                    context.goNamed(RouteName.bottomTabName, extra: {
+                      'username': usernameController.text,
+                      'password': passwordController.text,
+                    });
                   },
                 ),
                 SizedBox(height: context.screenHeight * 25 / 896),

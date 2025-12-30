@@ -7,6 +7,7 @@ class AppColor {
   static const Color blushWhite = Color(0xFFFFF9FF);
   static const Color nearWhite = Color(0xFFFCFCFC);
   static const Color nearBlack = Color(0xFF030303);
+  static const Color blackPurple = Color(0xFF181725);
   static const Color neutralGray = Color(0xFF828282);
   static const Color blue = Color(0xFF5383EC);
   static const Color steelBlue = Color(0xFF4A66AC);

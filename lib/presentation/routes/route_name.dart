@@ -22,6 +22,7 @@ class RouteName {
   static const String verifyOtpPath = '/verify_otp';
   static const String selectLocationPath = '/select_location';
   static const String homePath = '/home';
+  static const String bottomTabPath = '/bottom_tab';
   
 
   /// Define route name
@@ -32,4 +33,5 @@ class RouteName {
   static const String verifyOtpName = 'verify_otp';
   static const String selectLocationName = 'select_location';
   static const String homeName = 'home';
+  static const String bottomTabName = 'bottom_tab';
 }

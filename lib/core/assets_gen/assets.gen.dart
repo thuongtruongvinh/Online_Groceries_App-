@@ -30,12 +30,28 @@ class $AssetsFontGen {
 class $AssetsIconGen {
   const $AssetsIconGen();
 
+  /// File path: assets/icon/ic_about.svg
+  SvgGenImage get icAbout => const SvgGenImage('assets/icon/ic_about.svg');
+
+  /// File path: assets/icon/ic_bell.svg
+  SvgGenImage get icBell => const SvgGenImage('assets/icon/ic_bell.svg');
+
   /// File path: assets/icon/ic_carrot.svg
   SvgGenImage get icCarrot => const SvgGenImage('assets/icon/ic_carrot.svg');
 
   /// File path: assets/icon/ic_carrot_color.svg
   SvgGenImage get icCarrotColor =>
       const SvgGenImage('assets/icon/ic_carrot_color.svg');
+
+  /// File path: assets/icon/ic_cart.svg
+  SvgGenImage get icCart => const SvgGenImage('assets/icon/ic_cart.svg');
+
+  /// File path: assets/icon/ic_creditcard.svg
+  SvgGenImage get icCreditcard =>
+      const SvgGenImage('assets/icon/ic_creditcard.svg');
+
+  /// File path: assets/icon/ic_explore.svg
+  SvgGenImage get icExplore => const SvgGenImage('assets/icon/ic_explore.svg');
 
   /// File path: assets/icon/ic_facebook.svg
   SvgGenImage get icFacebook =>
@@ -44,21 +60,80 @@ class $AssetsIconGen {
   /// File path: assets/icon/ic_google.svg
   SvgGenImage get icGoogle => const SvgGenImage('assets/icon/ic_google.svg');
 
+  /// File path: assets/icon/ic_heart.svg
+  SvgGenImage get icHeart => const SvgGenImage('assets/icon/ic_heart.svg');
+
+  /// File path: assets/icon/ic_id_card.svg
+  SvgGenImage get icIdCard => const SvgGenImage('assets/icon/ic_id_card.svg');
+
+  /// File path: assets/icon/ic_location.svg
+  SvgGenImage get icLocation =>
+      const SvgGenImage('assets/icon/ic_location.svg');
+
+  /// File path: assets/icon/ic_order.svg
+  SvgGenImage get icOrder => const SvgGenImage('assets/icon/ic_order.svg');
+
+  /// File path: assets/icon/ic_pencill.svg
+  SvgGenImage get icPencill => const SvgGenImage('assets/icon/ic_pencill.svg');
+
+  /// File path: assets/icon/ic_promo.svg
+  SvgGenImage get icPromo => const SvgGenImage('assets/icon/ic_promo.svg');
+
+  /// File path: assets/icon/ic_question.svg
+  SvgGenImage get icQuestion =>
+      const SvgGenImage('assets/icon/ic_question.svg');
+
+  /// File path: assets/icon/ic_store.svg
+  SvgGenImage get icStore => const SvgGenImage('assets/icon/ic_store.svg');
+
+  /// File path: assets/icon/ic_user.svg
+  SvgGenImage get icUser => const SvgGenImage('assets/icon/ic_user.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
+    icAbout,
+    icBell,
     icCarrot,
     icCarrotColor,
+    icCart,
+    icCreditcard,
+    icExplore,
     icFacebook,
     icGoogle,
+    icHeart,
+    icIdCard,
+    icLocation,
+    icOrder,
+    icPencill,
+    icPromo,
+    icQuestion,
+    icStore,
+    icUser,
   ];
 }
 
 class $AssetsImgGen {
   const $AssetsImgGen();
 
+  /// File path: assets/img/img_avatar.png
+  AssetGenImage get imgAvatar =>
+      const AssetGenImage('assets/img/img_avatar.png');
+
   /// File path: assets/img/img_background_onboarding_screen.png
   AssetGenImage get imgBackgroundOnboardingScreen =>
       const AssetGenImage('assets/img/img_background_onboarding_screen.png');
+
+  /// File path: assets/img/img_banner1.png
+  AssetGenImage get imgBanner1 =>
+      const AssetGenImage('assets/img/img_banner1.png');
+
+  /// File path: assets/img/img_banner2.png
+  AssetGenImage get imgBanner2 =>
+      const AssetGenImage('assets/img/img_banner2.png');
+
+  /// File path: assets/img/img_banner3.png
+  AssetGenImage get imgBanner3 =>
+      const AssetGenImage('assets/img/img_banner3.png');
 
   /// File path: assets/img/img_logo_and_text.png
   AssetGenImage get imgLogoAndText =>
@@ -74,7 +149,11 @@ class $AssetsImgGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+    imgAvatar,
     imgBackgroundOnboardingScreen,
+    imgBanner1,
+    imgBanner2,
+    imgBanner3,
     imgLogoAndText,
     imgMapLocation,
     imgVegetables,

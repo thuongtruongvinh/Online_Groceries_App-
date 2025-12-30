@@ -117,7 +117,7 @@ class _SelectLocationState extends State<SelectLocation> {
 
               // Submit button
               AppButton(text: 'Submit', onTap: () {
-                context.pushReplacementNamed(RouteName.homeName, extra: {
+                context.pushReplacementNamed(RouteName.bottomTabName, extra: {
                   'zone': _zoneController.text,
                   'area': _areaController.text,
                 });
