@@ -21,4 +21,7 @@ abstract class ApiService {
 
   @POST('/auth/login')
   Future<LoginDto> login(@Body() LoginRequest request);
+
+  @GET('/auth/me')
+  Future<LoginDto> getUserInfo();
 }

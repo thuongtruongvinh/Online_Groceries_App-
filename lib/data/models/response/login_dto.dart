@@ -29,7 +29,7 @@ part 'login_dto.g.dart';
 /// The class includes:
 /// - User profile information (id, username, email, names, gender, image)
 /// - Authentication tokens (access token and refresh token)
-
+/// DTO -> Data transfer Object
 @JsonSerializable()
 class LoginDto {
   final int id;

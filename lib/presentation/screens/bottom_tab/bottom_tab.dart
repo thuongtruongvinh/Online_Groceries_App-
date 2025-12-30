@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:groceries_app/core/assets_gen/assets.gen.dart';
 import 'package:groceries_app/presentation/bloc/bottom_tab/bottom_tab_bloc.dart';
-import 'package:groceries_app/presentation/screens/Home/home_screen.dart';
+import 'package:groceries_app/presentation/screens/home/home_screen.dart';
 import 'package:groceries_app/presentation/screens/cart/cart_screen.dart';
 import 'package:groceries_app/presentation/screens/explore/explore_screen.dart';
 import 'package:groceries_app/presentation/screens/favourite/favourite_screen.dart';

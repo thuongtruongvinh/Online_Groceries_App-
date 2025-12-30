@@ -2,7 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries_app/presentation/bloc/bottom_tab/bottom_tab_bloc.dart';
 import 'package:groceries_app/presentation/routes/route_name.dart';
-import 'package:groceries_app/presentation/screens/Home/home_screen.dart';
+import 'package:groceries_app/presentation/screens/home/home_screen.dart';
 import 'package:groceries_app/presentation/screens/auth/signup_screen.dart';
 import 'package:groceries_app/presentation/screens/auth/verify_otp_screen.dart';
 import 'package:groceries_app/presentation/screens/bottom_tab/bottom_tab.dart';
