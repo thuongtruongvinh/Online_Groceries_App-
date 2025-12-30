@@ -21,4 +21,6 @@ class AppColors {
   /// The primary text color used for readability and contrast.
   /// Value: #212121 (Dark Gray)
   static const Color textColor = Color(0xFF212121);
+
+  static const Color grayGreen = Color(0xFFF2F3F2); // Gray Green
 }

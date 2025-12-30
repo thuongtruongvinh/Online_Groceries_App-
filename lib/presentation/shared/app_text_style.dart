@@ -54,6 +54,12 @@ class AppTextStyle {
     color: AppColor.nearBlack,
     fontFamily: 'Gilroy',
   );
+  static final TextStyle tsSemiBoldBlackPurple24 = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w600,
+    color: AppColor.blackPurple,
+    fontFamily: 'Gilroy',
+  );
 
   static final TextStyle tsSemiBoldNearBlack18 = TextStyle(
     fontSize: 18,
@@ -70,6 +76,13 @@ class AppTextStyle {
 
   static final TextStyle tsSemiBoldmintGreen14 = TextStyle(
     fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: AppColor.mintGreen,
+    fontFamily: 'Gilroy',
+  );
+
+  static final TextStyle tsSemiBoldmintGreen16 = TextStyle(
+    fontSize: 16,
     fontWeight: FontWeight.w600,
     color: AppColor.mintGreen,
     fontFamily: 'Gilroy',

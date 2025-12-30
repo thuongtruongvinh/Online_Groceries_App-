@@ -82,6 +82,9 @@ dependencies:
   #input Phone number
   intl_phone_number_input: ^0.7.5
 
+  #banner slider
+  carousel_slider: ^5.1.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
