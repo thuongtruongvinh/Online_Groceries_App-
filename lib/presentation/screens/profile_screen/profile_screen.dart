@@ -7,7 +7,6 @@ import 'package:groceries_app/presentation/shared/app_button.dart';
 import 'package:groceries_app/presentation/shared/app_text_style.dart';
 
 import 'package:groceries_app/presentation/theme/app_colors.dart';
-import 'package:groceries_app/presentation/theme/app_textstyle.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});

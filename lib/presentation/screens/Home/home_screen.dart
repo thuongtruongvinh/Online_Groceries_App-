@@ -1,8 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
 import 'package:groceries_app/core/assets_gen/assets.gen.dart';
 import 'package:groceries_app/core/extensions/context_extension.dart';
 import 'package:groceries_app/presentation/shared/app_text.dart';
@@ -22,15 +20,14 @@ class HomeScreenView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final data = GoRouterState.of(context).extra as Map<String, String>;
 
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
-      body: SingleChildScrollView(child: _buildBody(context, data)),
+      body: SingleChildScrollView(child: _buildBody(context, )),
     );
   }
 
-  Center _buildBody(BuildContext context, data) {
+  Center _buildBody(BuildContext context, ) {
     return Center(
       child: SafeArea(
         child: Padding(
@@ -40,7 +37,7 @@ class HomeScreenView extends StatelessWidget {
               SvgPicture.asset(Assets.icon.icCarrotColor.path, width: 30),
               SizedBox(height: context.screenHeight * 8 / 896),
               AppText(
-                text: data['zone'] ?? 'Dhaka, Bangladesh',
+                text: 'Let\'s get\nGroceries',
                 style: AppTextStyle.tsSemiBoldNearBlack18,
               ),
               SizedBox(height: context.screenHeight * 20 / 896),

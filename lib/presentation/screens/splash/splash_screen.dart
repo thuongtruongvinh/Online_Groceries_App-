@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries_app/core/assets_gen/assets.gen.dart';
-import 'package:groceries_app/presentation/routes/app_router.dart';
 import 'package:groceries_app/presentation/routes/route_name.dart';
 import 'package:groceries_app/presentation/shared/app_color.dart';
 
