@@ -19,6 +19,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       await _onLoginEvent(event, emit);
     });
     on<OnClearLoginErrorMessage>(_onClearLoginErrorMessage);
+    on<OnTogglePasswordVisibilityEvent>(_onTogglePasswordVisibilityEvent);
   }
 
   Future<void> _onLoginEvent(
@@ -71,5 +72,12 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     Emitter<LoginState> emit,
   ) {
     emit(state.copyWith(apiErrorMessage: ''));
+  }
+
+  void _onTogglePasswordVisibilityEvent(
+    OnTogglePasswordVisibilityEvent event,
+    Emitter<LoginState> emit,
+  ) {
+    emit(state.copyWith(isHidePassword: !state.isHidePassword));
   }
 }

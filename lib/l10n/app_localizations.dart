@@ -103,6 +103,144 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Get Started'**
   String get getStarted;
+
+  /// No description provided for @welcome.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome\nto our store'**
+  String get welcome;
+
+  /// No description provided for @gerYourGroceries.
+  ///
+  /// In en, this message translates to:
+  /// **'Ger your groceries in as fast as one hour'**
+  String get gerYourGroceries;
+
+  /// No description provided for @getYourGroceriesWithNectar.
+  ///
+  /// In en, this message translates to:
+  /// **'Get your groceries\nwith nectar'**
+  String get getYourGroceriesWithNectar;
+
+  /// No description provided for @areYouAreadyAMember.
+  ///
+  /// In en, this message translates to:
+  /// **'Are You Aready a member?'**
+  String get areYouAreadyAMember;
+
+  /// No description provided for @signIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In'**
+  String get signIn;
+
+  /// No description provided for @orConnectWithSocialMedia.
+  ///
+  /// In en, this message translates to:
+  /// **'Or connect with social media'**
+  String get orConnectWithSocialMedia;
+
+  /// No description provided for @enterYour4DigitCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter Your 4-digit code'**
+  String get enterYour4DigitCode;
+
+  /// No description provided for @code.
+  ///
+  /// In en, this message translates to:
+  /// **'Code'**
+  String get code;
+
+  /// No description provided for @resendCodeIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend code in'**
+  String get resendCodeIn;
+
+  /// No description provided for @selectYourLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Your Location'**
+  String get selectYourLocation;
+
+  /// No description provided for @switchOnYourLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch on your location to stay in tune\nwith whats happening in your area'**
+  String get switchOnYourLocation;
+
+  /// No description provided for @yourZone.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Zone'**
+  String get yourZone;
+
+  /// No description provided for @yourArea.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Area'**
+  String get yourArea;
+
+  /// No description provided for @submit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get submit;
+
+  /// No description provided for @orders.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders'**
+  String get orders;
+
+  /// No description provided for @myDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'My Details'**
+  String get myDetails;
+
+  /// No description provided for @deliveryAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Address'**
+  String get deliveryAddress;
+
+  /// No description provided for @paymentMethods.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Methods'**
+  String get paymentMethods;
+
+  /// No description provided for @promoCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Promo Code'**
+  String get promoCode;
+
+  /// No description provided for @notifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notifications;
+
+  /// No description provided for @help.
+  ///
+  /// In en, this message translates to:
+  /// **'Help'**
+  String get help;
+
+  /// No description provided for @about.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get about;
+
+  /// No description provided for @logOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Log Out'**
+  String get logOut;
 }
 
 class _AppLocalizationsDelegate

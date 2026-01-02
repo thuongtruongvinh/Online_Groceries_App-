@@ -1,27 +1,27 @@
 {
     "@@locale": "en",
-    "getStarted": "Get Started"
-    "welcome": "Welcome\nto our store"
-    "gerYourGroceries": "Ger your groceries in as fast as one hour"
-    "getYourGroceriesWithNectar": "Get your groceries\nwith nectar"
-    "areYouAreadyAMember": "Are You Aready a member?"
-    "signIn": "Sign In"
-    "orConnectWithSocialMedia": "Or connect with social media"
-    "enterYour4DigitCode":"Enter Your 4-digit code"
-    "code": "Code"
-    "resendcodein": "Resend code in"
-    "selectYourLocation": "Select Your Location"
-    "switchOnYourLocation": "Switch on your location to stay in tune\nwith whats happening in your area"
-    "yourZone" : "Your Zone"
-    "yourArea" : "Your Area"
-    "submit": "Submit"
-    "orders": "Orders"
-    "myDetails": "My Details"
-    "deliveryAddress": "Delivery Address"
-    "paymentMethods": "Payment Methods"
-    "promoCode": "Promo Code"
-    "notifications": "Notifications"
-    "help": "Help"
-    "about": "About"‹›
+    "getStarted": "Get Started",
+    "welcome": "Welcome\nto our store",
+    "gerYourGroceries": "Ger your groceries in as fast as one hour",
+    "getYourGroceriesWithNectar": "Get your groceries\nwith nectar",
+    "areYouAreadyAMember": "Are You Aready a member?",
+    "signIn": "Sign In",
+    "orConnectWithSocialMedia": "Or connect with social media",
+    "enterYour4DigitCode":"Enter Your 4-digit code",
+    "code": "Code",
+    "resendCodeIn": "Resend code in",
+    "selectYourLocation": "Select Your Location",
+    "switchOnYourLocation": "Switch on your location to stay in tune\nwith whats happening in your area",
+    "yourZone" : "Your Zone",
+    "yourArea" : "Your Area",
+    "submit": "Submit",
+    "orders": "Orders",
+    "myDetails": "My Details",
+    "deliveryAddress": "Delivery Address",
+    "paymentMethods": "Payment Methods",
+    "promoCode": "Promo Code",
+    "notifications": "Notifications",
+    "help": "Help",
+    "about": "About",
     "logOut":"Log Out"
 }

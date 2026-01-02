@@ -1,4 +1,27 @@
 {
     "@@locale": "vi",
-    "getStarted": "Bắt đầu"
+    "getStarted": "Bắt đầu",
+    "welcome": "Chào mừng\nđến cửa hàng của chúng tôi",
+    "gerYourGroceries": "Nhận thực phẩm của bạn chỉ trong một giờ",
+    "getYourGroceriesWithNectar": "Nhận thực phẩm\nvới nectar",
+    "areYouAreadyAMember": "Bạn đã là thành viên chưa?",
+    "signIn": "Đăng nhập",
+    "orConnectWithSocialMedia": "Hoặc kết nối với mạng xã hội",
+    "enterYour4DigitCode":"Nhập mã 4 chữ số của bạn",
+    "code": "Mã",
+    "resendCodeIn": "Gửi lại mã trong",
+    "selectYourLocation": "Chọn vị trí của bạn",
+    "switchOnYourLocation": "Bật định vị để cập nhật\nnhững gì đang diễn ra trong khu vực của bạn",
+    "yourZone" : "Khu vực của bạn",
+    "yourArea" : "Khu vực của bạn",
+    "submit": "Gửi",
+    "orders": "Đơn hàng",
+    "myDetails": "Thông tin cá nhân",
+    "deliveryAddress": "Địa chỉ giao hàng",
+    "paymentMethods": "Phương thức thanh toán",
+    "promoCode": "Mã khuyến mãi",
+    "notifications": "Thông báo",
+    "help": "Trợ giúp",
+    "about": "Giới thiệu",
+    "logOut":"Đăng xuất"
 }

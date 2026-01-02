@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:groceries_app/core/assets_gen/assets.gen.dart';
 import 'package:groceries_app/core/extensions/context_extension.dart';
 import 'package:groceries_app/di/injector.dart';
 import 'package:groceries_app/domain/repositories/local_storage_repository.dart';
 import 'package:groceries_app/domain/usecase/login_user_usecase.dart';
 import 'package:groceries_app/presentation/bloc/login/login_bloc.dart';
+import 'package:groceries_app/presentation/bloc/login/login_event.dart';
 import 'package:groceries_app/presentation/bloc/login/login_state.dart';
 import 'package:groceries_app/presentation/error/failure_mapper.dart';
+import 'package:groceries_app/presentation/routes/route_name.dart';
 import 'package:groceries_app/presentation/shared/app_button.dart';
 import 'package:groceries_app/presentation/shared/app_text.dart';
 import 'package:groceries_app/presentation/shared/app_text_style.dart';
@@ -37,15 +40,39 @@ class _LoginScreenView extends StatelessWidget {
   Widget build(BuildContext context) {
     final usernameController = TextEditingController();
     final passwordController = TextEditingController();
+    final loginBloc = context.read<LoginBloc>();
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
-      body: BlocBuilder<LoginBloc, LoginState>(
+      body: BlocConsumer<LoginBloc, LoginState>(
+        bloc: loginBloc,
+        listener: (context, state) {
+          if (state.isSuccess) {
+            context.goNamed(RouteName.bottomTabName);
+          } else if (state.apiErrorMessage.isNotEmpty) {
+            showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                title: const Text('Login Failed'),
+                content: Text(state.apiErrorMessage),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      context.pop();
+                      loginBloc.add(OnClearLoginErrorMessage());
+                    },
+                    child: const Text('OK'),
+                  ),
+                ],
+              ),
+            );
+          }
+        },
         builder: (context, state) {
           if (state.isLoading) {
             return const Center(child: CircularProgressIndicator());
           }
 
-          return Padding(
+          return SingleChildScrollView(
             padding: const EdgeInsets.fromLTRB(25, 0, 25, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,7 +105,24 @@ class _LoginScreenView extends StatelessWidget {
                   style: AppTextStyle.tsSemiboldNeutralGray16,
                 ),
 
-                TextField(controller: passwordController, obscureText: true),
+                TextField(
+                  controller: passwordController,
+                  obscureText: state.isHidePassword,
+                  decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        state.isHidePassword
+                            ? Icons.visibility_off
+                            : Icons.visibility,
+                      ),
+                      onPressed: () {
+                        context.read<LoginBloc>().add(
+                          OnTogglePasswordVisibilityEvent(),
+                        );
+                      },
+                    ),
+                  ),
+                ),
                 SizedBox(height: context.screenHeight * 30 / 896),
                 AppText(
                   text: 'Forgot Password?',
@@ -89,26 +133,34 @@ class _LoginScreenView extends StatelessWidget {
                 /// Button for login
                 AppButton(
                   text: 'Log In',
-                  onTap: ()  async{
+                  onTap: () async {
                     if (usernameController.text.isEmpty ||
                         passwordController.text.isEmpty) {
-                        await showDialog (
-                          context: context,
-                          builder: (context) =>  AlertDialog(
-                            title: const Text('Error'),
-                            content: const Text('Please enter username and password'),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: const Text('OK'),
-                              ),
-                            ],
+                      await showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title: const Text('Error'),
+                          content: const Text(
+                            'Please enter username and password',
                           ),
-                        );
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        ),
+                      );
+                    } else {
+                      context.read<LoginBloc>().add(
+                        OnLoginEvent(
+                          usernameController.text.trim(),
+                          passwordController.text.trim(),
+                        ),
+                      );
                     }
-                    // context.goNamed(RouteName.bottomTabName);
                   },
                 ),
                 SizedBox(height: context.screenHeight * 25 / 896),

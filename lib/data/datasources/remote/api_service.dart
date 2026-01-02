@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:groceries_app/data/models/response/user_info_dto.dart';
 import 'package:injectable/injectable.dart';
 import 'package:groceries_app/data/models/request/login_request.dart';
 import 'package:groceries_app/data/models/response/login_dto.dart';
@@ -23,5 +24,5 @@ abstract class ApiService {
   Future<LoginDto> login(@Body() LoginRequest request);
 
   @GET('/auth/me')
-  Future<LoginDto> getUserInfo();
+  Future<UserInfoDto> getUserInfo();
 }
