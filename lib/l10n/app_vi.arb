@@ -23,5 +23,6 @@
     "notifications": "Thông báo",
     "help": "Trợ giúp",
     "about": "Giới thiệu",
-    "logOut":"Đăng xuất"
+    "logOut":"Đăng xuất",
+    "changeLanguage": "Đổi ngôn ngữ"
 }

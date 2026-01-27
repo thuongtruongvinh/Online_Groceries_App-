@@ -10,5 +10,11 @@ class StorageKeys {
   static const String accessToken = 'access_token';
   static const String userId = 'user_id';
   static const String localeKey = 'locale_key';
+
+  static const String userIdKey = 'user_id';
+  static const String userEmailKey = 'user_email';
+  static const String themeModeKey = 'theme_mode';
+  static const String notificationsEnabledKey = 'notifications_enabled';
+  static const String isFirstLaunchKey = 'is_first_launch';
   // ...
 }

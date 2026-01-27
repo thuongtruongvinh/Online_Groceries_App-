@@ -23,6 +23,8 @@ import 'package:groceries_app/data/datasources/remote/api_service.dart'
     as _i138;
 import 'package:groceries_app/data/repositories/auth_repository_impl.dart'
     as _i774;
+import 'package:groceries_app/data/repositories/cart_repository_impl.dart'
+    as _i353;
 import 'package:groceries_app/data/repositories/local_storage_impl.dart'
     as _i821;
 import 'package:groceries_app/di/domain_module.dart' as _i306;
@@ -31,11 +33,17 @@ import 'package:groceries_app/di/third_party_module.dart' as _i202;
 import 'package:groceries_app/domain/core/app_logger.dart' as _i649;
 import 'package:groceries_app/domain/repositories/auth_repository.dart'
     as _i345;
+import 'package:groceries_app/domain/repositories/cart_repository.dart'
+    as _i909;
 import 'package:groceries_app/domain/repositories/local_storage_repository.dart'
     as _i378;
+import 'package:groceries_app/domain/usecase/get_favorite_product_usecase.dart'
+    as _i651;
+import 'package:groceries_app/domain/usecase/get_locale_usecase.dart' as _i509;
 import 'package:groceries_app/domain/usecase/get_user_info_usecase.dart'
     as _i1062;
 import 'package:groceries_app/domain/usecase/login_user_usecase.dart' as _i644;
+import 'package:groceries_app/domain/usecase/set_locale_usecase.dart' as _i1006;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:shared_preferences/shared_preferences.dart' as _i460;
 
@@ -103,6 +111,12 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i649.AppLogger>(),
       ),
     );
+    gh.factory<_i509.GetLocaleUsecase>(
+      () => domainModule.getLocaleUsecase(gh<_i378.ILocalStorage>()),
+    );
+    gh.factory<_i1006.SetLocaleUsecase>(
+      () => domainModule.saveLocaleUsecase(gh<_i378.ILocalStorage>()),
+    );
     gh.factory<_i361.Dio>(
       () => thirdPartyModule.dio(
         gh<_i612.AppConfig>(),
@@ -113,6 +127,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i138.ApiService>(() => _i138.ApiService(gh<_i361.Dio>()));
     gh.lazySingleton<_i345.IAuthRepository>(
       () => _i774.AuthRepositoryImpl(gh<_i138.ApiService>()),
+    );
+    gh.lazySingleton<_i909.ICartRepository>(
+      () => _i353.CartRepositoryImpl(gh<_i138.ApiService>()),
+    );
+    gh.factory<_i651.GetFavoriteProductUsecase>(
+      () => domainModule.getFavoriteProductUsecase(gh<_i909.ICartRepository>()),
     );
     gh.factory<_i644.LoginUserUsecase>(
       () => domainModule.loginUserUsecase(gh<_i345.IAuthRepository>()),

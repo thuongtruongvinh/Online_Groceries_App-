@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:groceries_app/core/constants/storage_keys.dart';
 import 'package:injectable/injectable.dart';
 import 'package:groceries_app/data/datasources/local/local_storage_datasource.dart';
 import 'package:groceries_app/domain/core/result.dart';
@@ -29,13 +30,6 @@ class LocalStorageImpl implements ILocalStorage {
 
   LocalStorageImpl(this._localStorageDataSource);
 
-  /// Storage keys for consistency
-  static const String _userIdKey = 'user_id';
-  static const String _userEmailKey = 'user_email';
-  static const String _themeModeKey = 'theme_mode';
-  static const String _notificationsEnabledKey = 'notifications_enabled';
-  static const String _isFirstLaunchKey = 'is_first_launch';
-
   @override
   ResultFuture<void> setAccessToken(String accessToken) async {
     return _localStorageDataSource.storeAccessToken(accessToken);
@@ -63,43 +57,49 @@ class LocalStorageImpl implements ILocalStorage {
 
   @override
   ResultFuture<void> setUserId(String userId) async {
-    return _localStorageDataSource.storeString(_userIdKey, userId);
+    return _localStorageDataSource.storeString(StorageKeys.userIdKey, userId);
   }
 
   @override
   ResultFuture<String?> getUserId() async {
-    return _localStorageDataSource.retrieveString(_userIdKey);
+    return _localStorageDataSource.retrieveString(StorageKeys.userIdKey);
   }
 
   @override
   ResultFuture<void> setUserEmail(String email) async {
-    return _localStorageDataSource.storeString(_userEmailKey, email);
+    return _localStorageDataSource.storeString(StorageKeys.userEmailKey, email);
   }
 
   @override
   ResultFuture<String?> getUserEmail() async {
-    return _localStorageDataSource.retrieveString(_userEmailKey);
+    return _localStorageDataSource.retrieveString(StorageKeys.userEmailKey);
   }
 
   @override
   ResultFuture<void> setThemeMode(String themeMode) async {
-    return _localStorageDataSource.storeString(_themeModeKey, themeMode);
+    return _localStorageDataSource.storeString(
+      StorageKeys.themeModeKey,
+      themeMode,
+    );
   }
 
   @override
   ResultFuture<String?> getThemeMode() async {
-    return _localStorageDataSource.retrieveString(_themeModeKey);
+    return _localStorageDataSource.retrieveString(StorageKeys.themeModeKey);
   }
 
   @override
   ResultFuture<void> setNotificationsEnabled(bool enabled) async {
-    return _localStorageDataSource.storeBool(_notificationsEnabledKey, enabled);
+    return _localStorageDataSource.storeBool(
+      StorageKeys.notificationsEnabledKey,
+      enabled,
+    );
   }
 
   @override
   ResultFuture<bool> getNotificationsEnabled() async {
     final result = await _localStorageDataSource.retrieveBool(
-      _notificationsEnabledKey,
+      StorageKeys.notificationsEnabledKey,
     );
     return result.fold(
       (failure) => Left(failure),
@@ -109,13 +109,16 @@ class LocalStorageImpl implements ILocalStorage {
 
   @override
   ResultFuture<void> setIsFirstLaunch(bool isFirstLaunch) async {
-    return _localStorageDataSource.storeBool(_isFirstLaunchKey, isFirstLaunch);
+    return _localStorageDataSource.storeBool(
+      StorageKeys.isFirstLaunchKey,
+      isFirstLaunch,
+    );
   }
 
   @override
   ResultFuture<bool> getIsFirstLaunch() async {
     final result = await _localStorageDataSource.retrieveBool(
-      _isFirstLaunchKey,
+      StorageKeys.isFirstLaunchKey,
     );
     return result.fold(
       (failure) => Left(failure),

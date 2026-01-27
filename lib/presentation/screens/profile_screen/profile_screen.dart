@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:groceries_app/core/assets_gen/assets.gen.dart';
 import 'package:groceries_app/core/extensions/context_extension.dart';
 import 'package:groceries_app/di/injector.dart';
 import 'package:groceries_app/domain/core/app_logger.dart';
+import 'package:groceries_app/domain/repositories/local_storage_repository.dart';
 import 'package:groceries_app/domain/usecase/get_user_info_usecase.dart';
+import 'package:groceries_app/l10n/app_localizations.dart';
 import 'package:groceries_app/presentation/bloc/profile/profile_bloc.dart';
 import 'package:groceries_app/presentation/bloc/profile/profile_event.dart';
 import 'package:groceries_app/presentation/bloc/profile/profile_state.dart';
 import 'package:groceries_app/presentation/error/failure_mapper.dart';
+import 'package:groceries_app/presentation/routes/route_name.dart';
+import 'package:groceries_app/presentation/screens/locale/locale_bloc.dart';
+import 'package:groceries_app/presentation/screens/locale/locale_event.dart';
+import 'package:groceries_app/presentation/screens/locale/locale_state.dart';
 import 'package:groceries_app/presentation/screens/profile_screen/widgets/list_card_widget.dart';
 import 'package:groceries_app/presentation/shared/app_button.dart';
 import 'package:groceries_app/presentation/shared/app_text_style.dart';
@@ -67,13 +74,35 @@ class _ProfileScreenView extends StatelessWidget {
           SizedBox(height: context.screenHeight * 69 / 896),
           _buildAvatarAndName(context, state),
           SizedBox(height: context.screenHeight * 50 / 896),
-          _buildListCard(),
-          SizedBox(height: context.screenHeight * 72 / 896),
+          _buildListCard(context),
+          SizedBox(height: 32),
+          Row(
+            children: [
+              Text(AppLocalizations.of(context).deliveryAddress),
+              const Spacer(),
+              BlocBuilder<LocaleBloc, LocaleState>(
+                builder: (context, state) {
+                  return Switch(
+                    value: state.isVietnamese,
+                    onChanged: (value) {
+                      context.read<LocaleBloc>().add(
+                        OnChangeLocaleEvent(value ? 'vi' : 'en'),
+                      );
+                    },
+                  );
+                },
+              ),
+            ],
+          ),
+          SizedBox(height: context.screenHeight * 32 / 896),
           AppButton(
             text: 'Log Out',
             color: AppColors.grayGreen,
             prexixIcon: true,
-            onTap: () {},
+            onTap: () {
+              getIt<ILocalStorage>().setAccessToken('');
+              context.go(RouteName.loginPath);
+            },
           ),
         ],
       ),
@@ -114,23 +143,41 @@ class _ProfileScreenView extends StatelessWidget {
     );
   }
 
-  ListCardWidget _buildListCard() {
+  ListCardWidget _buildListCard(BuildContext context) {
     return ListCardWidget(
       items: [
-        ListItem(title: 'Orders', iconPath: Assets.icon.icOrder.path),
-        ListItem(title: 'My Details', iconPath: Assets.icon.icIdCard.path),
         ListItem(
-          title: 'Delivery Address',
+          title: AppLocalizations.of(context).orders,
+          iconPath: Assets.icon.icOrder.path,
+        ),
+        ListItem(
+          title: AppLocalizations.of(context).myDetails,
+          iconPath: Assets.icon.icIdCard.path,
+        ),
+        ListItem(
+          title: AppLocalizations.of(context).deliveryAddress,
           iconPath: Assets.icon.icLocation.path,
         ),
         ListItem(
-          title: 'Payment Methods',
+          title: AppLocalizations.of(context).paymentMethods,
           iconPath: Assets.icon.icCreditcard.path,
         ),
-        ListItem(title: 'Promo Code', iconPath: Assets.icon.icPromo.path),
-        ListItem(title: 'Notifications', iconPath: Assets.icon.icBell.path),
-        ListItem(title: 'Help', iconPath: Assets.icon.icQuestion.path),
-        ListItem(title: 'About', iconPath: Assets.icon.icAbout.path),
+        ListItem(
+          title: AppLocalizations.of(context).promoCode,
+          iconPath: Assets.icon.icPromo.path,
+        ),
+        ListItem(
+          title: AppLocalizations.of(context).notifications,
+          iconPath: Assets.icon.icBell.path,
+        ),
+        ListItem(
+          title: AppLocalizations.of(context).help,
+          iconPath: Assets.icon.icQuestion.path,
+        ),
+        ListItem(
+          title: AppLocalizations.of(context).about,
+          iconPath: Assets.icon.icAbout.path,
+        ),
       ],
     );
   }

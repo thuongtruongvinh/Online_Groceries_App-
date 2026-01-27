@@ -80,4 +80,7 @@ class AppLocalizationsVi extends AppLocalizations {
 
   @override
   String get logOut => 'Đăng xuất';
+
+  @override
+  String get changeLanguage => 'Đổi ngôn ngữ';
 }

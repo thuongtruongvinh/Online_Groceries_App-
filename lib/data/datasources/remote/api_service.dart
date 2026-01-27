@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:groceries_app/data/models/response/cart_info_dto.dart';
 import 'package:groceries_app/data/models/response/user_info_dto.dart';
 import 'package:injectable/injectable.dart';
 import 'package:groceries_app/data/models/request/login_request.dart';
@@ -25,4 +26,7 @@ abstract class ApiService {
 
   @GET('/auth/me')
   Future<UserInfoDto> getUserInfo();
+
+  @GET('/carts/{id}')
+  Future<CartInfoDto> getCartInfo(@Path("id") String id);
 }

@@ -1,4 +1,9 @@
+import 'package:groceries_app/domain/repositories/cart_repository.dart';
+import 'package:groceries_app/domain/repositories/local_storage_repository.dart';
+import 'package:groceries_app/domain/usecase/get_favorite_product_usecase.dart';
+import 'package:groceries_app/domain/usecase/get_locale_usecase.dart';
 import 'package:groceries_app/domain/usecase/get_user_info_usecase.dart';
+import 'package:groceries_app/domain/usecase/set_locale_usecase.dart';
 import 'package:injectable/injectable.dart';
 import 'package:groceries_app/domain/repositories/auth_repository.dart';
 import 'package:groceries_app/domain/usecase/login_user_usecase.dart';
@@ -23,5 +28,18 @@ abstract class DomainModule {
     return GetUserInfoUsecase(repo);
   }
 
-  // ... other use cases
+  @Injectable()
+  GetLocaleUsecase getLocaleUsecase(ILocalStorage repo) {
+    return GetLocaleUsecase(repo);
+  }
+
+  @Injectable()
+  SetLocaleUsecase saveLocaleUsecase(ILocalStorage repo) {
+    return SetLocaleUsecase(repo);
+  }
+
+  @Injectable()
+  GetFavoriteProductUsecase getFavoriteProductUsecase(ICartRepository repo) {
+    return GetFavoriteProductUsecase(repo);
+  }
 }

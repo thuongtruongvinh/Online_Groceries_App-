@@ -30,6 +30,7 @@ class AuthRepositoryImpl extends IAuthRepository {
       final request = LoginRequest(
         username: credentials.username,
         password: credentials.password,
+        expiresInMins: credentials.expiresInMins,
       );
       final dto = await _apiService.login(request);
       return dto.toEntity();

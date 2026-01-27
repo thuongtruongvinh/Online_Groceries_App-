@@ -23,5 +23,6 @@
     "notifications": "Notifications",
     "help": "Help",
     "about": "About",
-    "logOut":"Log Out"
+    "logOut":"Log Out",
+    "changeLanguage": "Change Language"
 }

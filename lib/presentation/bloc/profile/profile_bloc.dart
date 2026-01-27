@@ -39,6 +39,11 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
             metadata: {'_getUserInfo': failure.cause.toString()},
             stackTrace: failure.stackTrace,
           );
+          emit(
+            state.copyWith(
+              apiErrorMessage: failureMapper.mapFailureToMessage(failure),
+            ),
+          );
         },
         (success) {
           emit(state.copyWith(userInfo: success));

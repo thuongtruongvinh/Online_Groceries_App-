@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries_app/core/assets_gen/assets.gen.dart';
+import 'package:groceries_app/di/injector.dart';
+import 'package:groceries_app/domain/repositories/local_storage_repository.dart';
 import 'package:groceries_app/presentation/routes/route_name.dart';
 import 'package:groceries_app/presentation/shared/app_color.dart';
 
@@ -18,9 +20,21 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _timer = Timer(const Duration(seconds: 3), () {
+    _timer = Timer(const Duration(seconds: 1), () async {
       if (!mounted) return;
-      context.goNamed(RouteName.onboardingName);
+      final accessToken = await getIt<ILocalStorage>().getAccessToken();
+      accessToken.fold(
+        (failure) {
+          context.goNamed(RouteName.onboardingName);
+        },
+        (data) {
+          if (data == null || data.isEmpty) {
+            context.goNamed(RouteName.onboardingName);
+          } else {
+            context.goNamed(RouteName.bottomTabName);
+          }
+        },
+      );
     });
   }
 

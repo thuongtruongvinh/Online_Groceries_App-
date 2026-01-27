@@ -32,7 +32,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         LoginCredentials(
           username: event.username,
           password: event.password,
-          expiresInMins: 30,
+          expiresInMins: 10,
         ),
       );
       await result.fold(

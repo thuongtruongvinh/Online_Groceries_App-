@@ -76,9 +76,9 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
           ),
         );
         await Future.delayed(const Duration(seconds: 1));
-        if (!context.mounted) return;
+        if (!mounted) return;
         Navigator.pop(context);
-        context.pushReplacementNamed(RouteName.selectLocationName,  );
+        context.pushReplacementNamed(RouteName.selectLocationName);
       },
       backgroundColor: AppColor.mintGreen,
       child: const Icon(Icons.chevron_right, size: 30, color: Colors.white),

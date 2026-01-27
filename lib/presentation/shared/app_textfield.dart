@@ -7,10 +7,8 @@ class AppTextField extends StatefulWidget {
   const AppTextField({super.key});
 
   @override
-  _AppTextFieldState createState() => _AppTextFieldState();
+  State<AppTextField> createState() => _AppTextFieldState();
 }
-
-
 
 class _AppTextFieldState extends State<AppTextField> {
   @override
